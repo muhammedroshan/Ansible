@@ -1,0 +1,14 @@
+- name: install mysql
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - mysql-server
+    - mysql-client
+    - mysql-common
+    - python-mysqldb
+
+- name: create mysql website user
+  mysql_users:
+    name: website
+    password: '{{ super_secure_password }}'
