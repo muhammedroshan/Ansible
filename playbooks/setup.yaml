@@ -1,0 +1,9 @@
+- hosts: webnode
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+
+  roles:
+    -deploy
